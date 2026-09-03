@@ -2,7 +2,7 @@
 // Base de dados de filmes
 // ---------------------------------------------------------
 const FILMES = [
-  { titulo: "Interestelar", generos: ["Ficção Científica", "Drama"], ano: 2014, classificacao: "PG-13", duracao: 169, popularidade: "popular", spoilerSensivel: false, sinopse: "Um grupo de astronautas atravessa um buraco de minhoca em busca de um novo lar para a humanidade." },
+  { titulo: "Interestelar", generos: ["Ficção Científica", "Drama","Ação"], ano: 2014, classificacao: "PG-13", duracao: 169, popularidade: "popular", spoilerSensivel: false, sinopse: "Um grupo de astronautas atravessa um buraco de minhoca em busca de um novo lar para a humanidade." },
   { titulo: "Vingadores: Ultimato", generos: ["Ação", "Ficção Científica", "Aventura"], ano: 2019, classificacao: "PG-13", duracao: 181, popularidade: "popular", spoilerSensivel: false, sinopse: "Os heróis remanescentes se unem para reverter os efeitos de uma destruição em escala universal." },
   { titulo: "Clube da Luta", generos: ["Drama", "Suspense"], ano: 1999, classificacao: "18+", duracao: 139, popularidade: "cult", spoilerSensivel: true, sinopse: "Um homem insone forma, ao lado de um vendedor de sabão carismático, um clube de luta clandestino." },
   { titulo: "Cidade de Deus", generos: ["Drama", "Ação"], ano: 2002, classificacao: "18+", duracao: 130, popularidade: "cult", spoilerSensivel: false, sinopse: "A trajetória de jovens ligados ao crime organizado em uma comunidade do Rio de Janeiro, ao longo de duas décadas." },
@@ -44,6 +44,7 @@ const FILMES = [
   { titulo: "O Sexto Sentido", generos: ["Suspense", "Drama", "Terror"], ano: 1999, classificacao: "14+", duracao: 107, popularidade: "cult", spoilerSensivel: true, sinopse: "Um psicólogo infantil tenta ajudar um menino que afirma conseguir ver pessoas mortas." },
   { titulo: "Whiplash: Em Busca da Perfeição", generos: ["Drama", "Suspense"], ano: 2014, classificacao: "14+", duracao: 106, popularidade: "cult", spoilerSensivel: false, sinopse: "Um baterista de jazz é levado ao limite pelos métodos implacáveis de um professor obcecado por excelência." },
   { titulo: "La La Land: Cantando Estações", generos: ["Romance", "Drama", "Comédia"], ano: 2016, classificacao: "PG-13", duracao: 128, popularidade: "popular", spoilerSensivel: false, sinopse: "Uma atriz em início de carreira e um pianista de jazz se apaixonam em Los Angeles enquanto perseguem seus sonhos." },
+  
 ];
 
 // ---------------------------------------------------------
