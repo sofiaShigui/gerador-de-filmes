@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cine Sorte — Gerador de Filmes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="marquee">
+
+    <header class="marquee__header">
+      <div class="reel" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <h1 class="marquee__title">Cine Sorte</h1>
+      <p class="marquee__subtitle">Diga o que você quer sentir hoje. A gente sorteia o filme.</p>
+    </header>
+
+    <section class="ticket" id="resultado" aria-live="polite">
+      <div class="ticket__notch ticket__notch--left" aria-hidden="true"></div>
+      <div class="ticket__notch ticket__notch--right" aria-hidden="true"></div>
+
+      <div class="ticket__body" id="ticketBody">
+        <p class="ticket__eyebrow">Sua sessão está livre</p>
+        <h2 class="ticket__title" id="filmeTitulo">Ajuste as preferências e sorteie um filme</h2>
+        <p class="ticket__meta" id="filmeMeta">Gênero — Ano — Classificação — Duração</p>
+        <p class="ticket__desc" id="filmeDesc">O resultado aparece aqui assim que você clicar em “Sortear filme”.</p>
+      </div>
+    </section>
+
+    <button class="botao-sortear" id="btnSortear" type="button">
+      <span class="botao-sortear__dado" aria-hidden="true">🎬</span>
+      Sortear filme
+    </button>
+
+    <section class="painel">
+      <h2 class="painel__titulo">Preferências</h2>
+
+      <div class="grupo">
+        <h3 class="grupo__titulo">Gêneros <span class="grupo__dica">(escolha quantos quiser)</span></h3>
+        <div class="opcoes opcoes--pills" id="grupoGeneros">
+          <label class="pill"><input type="checkbox" value="Ação"><span>Ação</span></label>
+          <label class="pill"><input type="checkbox" value="Comédia"><span>Comédia</span></label>
+          <label class="pill"><input type="checkbox" value="Drama"><span>Drama</span></label>
+          <label class="pill"><input type="checkbox" value="Ficção Científica"><span>Ficção científica</span></label>
+          <label class="pill"><input type="checkbox" value="Terror"><span>Terror</span></label>
+          <label class="pill"><input type="checkbox" value="Romance"><span>Romance</span></label>
+          <label class="pill"><input type="checkbox" value="Animação"><span>Animação</span></label>
+          <label class="pill"><input type="checkbox" value="Aventura"><span>Aventura</span></label>
+          <label class="pill"><input type="checkbox" value="Suspense"><span>Suspense</span></label>
+          <label class="pill"><input type="checkbox" value="Fantasia"><span>Fantasia</span></label>
+        </div>
+      </div>
+
+      <div class="divisoria" aria-hidden="true"></div>
+
+      <div class="grupo">
+        <h3 class="grupo__titulo">Época</h3>
+        <div class="opcoes opcoes--botoes" id="grupoEpoca" data-selecao-unica>
+          <button type="button" class="opcao-botao is-ativa" data-valor="qualquer">Qualquer época</button>
+          <button type="button" class="opcao-botao" data-valor="classico">Clássico (até 1989)</button>
+          <button type="button" class="opcao-botao" data-valor="moderno">90's e 2000's</button>
+          <button type="button" class="opcao-botao" data-valor="recente">Recente (2010+)</button>
+        </div>
+      </div>
+
+      <div class="divisoria" aria-hidden="true"></div>
+
+      <div class="grupo">
+        <h3 class="grupo__titulo">Classificação indicativa <span class="grupo__dica">(escolha quantas quiser)</span></h3>
+        <div class="opcoes opcoes--pills" id="grupoClassificacao">
+          <label class="pill"><input type="checkbox" value="PG"><span>PG</span></label>
+          <label class="pill"><input type="checkbox" value="PG-13"><span>PG-13</span></label>
+          <label class="pill"><input type="checkbox" value="14+"><span>14+</span></label>
+          <label class="pill"><input type="checkbox" value="16+"><span>16+</span></label>
+          <label class="pill"><input type="checkbox" value="18+"><span>18+</span></label>
+        </div>
+      </div>
+
+      <div class="divisoria" aria-hidden="true"></div>
+
+      <div class="grupo">
+        <h3 class="grupo__titulo">Duração</h3>
+        <div class="opcoes opcoes--botoes" id="grupoDuracao" data-selecao-unica>
+          <button type="button" class="opcao-botao is-ativa" data-valor="qualquer">Qualquer duração</button>
+          <button type="button" class="opcao-botao" data-valor="curta">Curta (até 90 min)</button>
+          <button type="button" class="opcao-botao" data-valor="media">Média (91–140 min)</button>
+          <button type="button" class="opcao-botao" data-valor="longa">Longa (140+ min)</button>
+        </div>
+      </div>
+
+      <div class="divisoria" aria-hidden="true"></div>
+
+      <div class="grupo">
+        <h3 class="grupo__titulo">Popularidade</h3>
+        <div class="opcoes opcoes--botoes" id="grupoPopularidade" data-selecao-unica>
+          <button type="button" class="opcao-botao is-ativa" data-valor="qualquer">Tanto faz</button>
+          <button type="button" class="opcao-botao" data-valor="popular">Sucessos conhecidos</button>
+          <button type="button" class="opcao-botao" data-valor="cult">Cult / pouco conhecidos</button>
+        </div>
+      </div>
+
+      <div class="divisoria" aria-hidden="true"></div>
+
+      <label class="chave">
+        <input type="checkbox" id="semSpoiler">
+        <span class="chave__trilho" aria-hidden="true"></span>
+        <span class="chave__texto">Evitar filmes com sinopse sensível a spoiler</span>
+      </label>
+    </section>
+
+    <p class="rodape">Base com 42 filmes selecionados manualmente. Nenhuma nota fiscal foi consultada para gerar seu próximo sábado à noite.</p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
